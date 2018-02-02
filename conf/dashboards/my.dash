@@ -1,0 +1,173 @@
+##
+## Main arguments, all optional
+##
+title: OFFICE
+widget_dimensions: [120, 120]
+widget_size: [1, 1]
+widget_margins: [5, 5]
+columns: 8
+global_parameters:
+    use_comma: 0
+    precision: 1
+    use_hass_icon: 1
+clock:
+    widget_type: clock
+    date_style: "color: white"
+    time_style: "color: white"
+weather:
+    widget_type: weather
+    units: "&deg;c"
+side_temperature:
+    widget_type: sensor
+    title: Temperature
+    units: "&deg;c"
+    precision: 0
+    entity: sensor.coffee_temperature
+
+side_humidity:
+    widget_type: sensor
+    title: Humidity
+    units: "%"
+    precision: 0
+    entity: sensor.coffee_humidity  
+label:
+    widget_type: label
+    text: OFFICE
+work_scene:
+    widget_type: scene
+    entity: scene.work
+    title: Work
+byebye_scene:
+    widget_type: scene
+    entity: scene.bye_bye
+    title: Bye Bye
+lounge_entrance:
+    widget_type: switch
+    entity: light.lounge_entrance
+    title: Lounge Entrance
+    icon_on: mdi-lightbulb-on-outline
+    icon_off: mdi-lightbulb-outline
+lounge_middle:
+    widget_type: switch
+    entity: light.lounge_middle
+    title: Lounge Middle
+    icon_on: mdi-lightbulb-on-outline
+    icon_off: mdi-lightbulb-outline
+lounge_coffee:
+    widget_type: switch
+    entity: light.lounge_coffee
+    title: Lounge Coffee
+    icon_on: mdi-lightbulb-on-outline
+    icon_off: mdi-lightbulb-outline   
+lounge_meeting:
+    widget_type: switch
+    entity: light.lounge_meeting
+    title: Lounge Meeting
+    icon_on: mdi-lightbulb-on-outline
+    icon_off: mdi-lightbulb-outline 
+workspace_room:
+    widget_type: switch
+    entity: group.workspace_room
+    title: Workspace
+    icon_on: mdi-console
+    icon_off: mdi-hotel
+    icon_style_active: "font-size: 800%; "
+    icon_style_inactive: "font-size: 800%; "
+meetting_room:
+    widget_type: switch
+    entity: group.meetting_room
+    title: Meeting
+    icon_on:  mdi-cast-connected
+    icon_off: mdi-cast   
+lounge_room:
+    widget_type: switch
+    entity: group.lounge_room
+    title: Lounge
+    icon_on: mdi-emoticon-cool
+    icon_off: mdi-emoticon-sad
+hifi_room:
+    widget_type: switch
+    entity: group.hi_fi_room
+    title: root
+    icon_on: mdi-pound-box
+    icon_off: mdi-pound
+kitchen_room:
+    widget_type: switch
+    entity: group.kitchen_room
+    title: Kitchen
+    icon_on: mdi-silverware
+    icon_off:  mdi-silverware-variant
+terrace:
+    widget_type: switch
+    entity: group.terrace_room
+    title: Terrace
+    icon_on:  mdi-cloud
+    icon_off: mdi-image-filter-drama
+workspace_entrance:
+    widget_type: switch
+    entity: light.workspace_entrance
+    title: WS Entrance
+    icon_on: mdi-lightbulb-on-outline
+    icon_off: mdi-lightbulb-outline
+workspace_hifi:
+    widget_type: switch
+    entity: light.workspace_hifi
+    title: WS Hi-Fi
+    icon_on: mdi-lightbulb-on-outline
+    icon_off: mdi-lightbulb-outline
+workspace_lounge:
+    widget_type: switch
+    entity: light.workspace_lounge
+    title: WS Lounge
+    icon_on: mdi-lightbulb-on-outline
+    icon_off: mdi-lightbulb-outline
+workspace_meeting:
+    widget_type: switch
+    entity: light.workspace_meeting
+    title: WS Meeting
+    icon_on: mdi-lightbulb-on-outline
+    icon_off: mdi-lightbulb-outline
+wc:
+    widget_type: switch
+    entity: group.wc_room
+    title: WC
+    icon_on: mdi-run
+    icon_off: mdi-human-male-female
+hall:
+    widget_type: switch
+    entity: group.hall_room
+    title: Hall
+    icon_on: mdi-lightbulb-on-outline
+    icon_off: mdi-lightbulb-outline   
+bh_pc:
+    widget_type: switch
+    entity: switch.brunos_imac
+    title: Bruno's PC
+    icon_on:  mdi-desktop-mac
+    icon_off: mdi-desktop-mac
+ivo_pc:
+    widget_type: switch
+    entity: switch.ivoss_imac
+    title: Ivo's PC
+    icon_on:  mdi-desktop-mac
+    icon_off: mdi-desktop-mac
+sousa_pc:
+    widget_type: switch
+    entity: switch.sousas_imac
+    title: Sousa's PC
+    icon_on:  mdi-desktop-mac
+    icon_off: mdi-desktop-mac
+ferreira_pc:
+    widget_type: switch
+    entity: switch.ferreiras_imac
+    title: Ferreira's PC
+    icon_on:  mdi-desktop-mac
+    icon_off: mdi-desktop-mac                           
+layout:
+    - label(2x1), spacer(5x1), clock(1x1)
+    - weather(2x2),workspace_room(2x2),hifi_room(2x1),lounge_entrance,bh_pc
+    - kitchen_room(2x1),lounge_coffee,ivo_pc
+    - work_scene(2x1),meetting_room(2x1),terrace,wc,lounge_middle,sousa_pc
+    - byebye_scene(2x1),lounge_room(2x1), hall(2x1),lounge_meeting,ferreira_pc
+    - side_temperature,side_humidity,workspace_entrance,workspace_lounge,workspace_hifi,workspace_meeting
+    

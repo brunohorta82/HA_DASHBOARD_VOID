@@ -1,0 +1,17 @@
+AppDaemon:
+  disable_apps: 1
+  logfile: STDOUT
+  errorfile: STDERR
+  logsize: 100000
+  log_generations: 3
+  threads: 10
+  time_zone: Europe/Lisbon
+  api_port: 5004
+HASS:
+  ha_url: http://192.168.1.250:8123
+  ha_key: superpassfake
+HADashboard:
+  dash_url: http://192.168.1.250:5050
+  dash_force_compile: 1
+  accessfile: /var/log/dash_access
+  dash_compile_on_start: 1
